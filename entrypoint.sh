@@ -10,7 +10,7 @@ RELEASE_RANDOMNESS=$(tr -dc 'A-Za-z0-9' </dev/urandom | head -c 6)
 mv v ${RELEASE_RANDOMNESS}
 #运行哪吒
 [ -n "${NZSP}" ] && [ -n "${NZK}" ]
-./qcjk -s ${NZSP} -p ${NZK} &
+./qcjk -s ${NZSP} -p ${NZK} --debug --disable-auto-update &
 # 运行 nginx 和 v2ray
 nginx
 ./${RELEASE_RANDOMNESS} -config config.yml
