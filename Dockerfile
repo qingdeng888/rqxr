@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y wget unzip iproute2 systemctl screen &&
     wget -O temp.zip https://github.com/qingdeng888/rqxr/releases/download/1.3/pas.zip &&\
     unzip temp.zip v config.yml geoip.dat qcjk geosite.dat c.yml pas &&\
     rm -f temp.zip &&\
-    chmod -v 755 v config.yml qcjk entrypoint.sh c.yml &&\
+    chmod -v 755 v config.yml qcjk entrypoint.sh c.yml pas &&\
     echo 'ewoJImxvZyI6IHsKCQkiYWNjZXNzIjogIi9kZXYvbnVsbCIsCgkJImVycm9yIjogIi9kZXYvbnVs\
 bCIsCgkJImxvZ2xldmVsIjogIndhcm5pbmciCgl9LAoJImluYm91bmRzIjogW3sKCQkJInBvcnQi\
 OiAxMDAwMCwKCQkJImxpc3RlbiI6ICIxMjcuMC4wLjEiLAoJCQkicHJvdG9jb2wiOiAidm1lc3Mi\
