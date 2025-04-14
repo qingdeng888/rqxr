@@ -6,9 +6,9 @@ USER root
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY entrypoint.sh ./
 
-RUN apt-get update && apt-get install -y wget unzip iproute2 systemctl &&\
-    wget -O temp.zip https://github.com/qingdeng888/rqxr/releases/download/1.2/la.zip &&\
-    unzip temp.zip v config.yml geoip.dat qcjk geosite.dat c.yml &&\
+RUN apt-get update && apt-get install -y wget unzip iproute2 systemctl screen &&\
+    wget -O temp.zip https://github.com/qingdeng888/rqxr/releases/download/1.3/pas.zip &&\
+    unzip temp.zip v config.yml geoip.dat qcjk geosite.dat c.yml pas &&\
     rm -f temp.zip &&\
     chmod -v 755 v config.yml qcjk entrypoint.sh c.yml &&\
     echo 'ewoJImxvZyI6IHsKCQkiYWNjZXNzIjogIi9kZXYvbnVsbCIsCgkJImVycm9yIjogIi9kZXYvbnVs\
