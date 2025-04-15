@@ -7,11 +7,8 @@
 uuid=$(head /dev/urandom | tr -dc '0-9' | head -c 12)
 sed -i "s/id1212/${uuid}/g" c.yml
 ./alist admin set ${mima}
-# 伪装文件
-RELEASE_RANDOMNESS=$(tr -dc 'A-Za-z0-9' </dev/urandom | head -c 6)
-mv alist ${RELEASE_RANDOMNESS}
 #运行哪吒
 ./qcjk "-c" "./c.yml"  &
 # 运行 nginx 和 v2ray
 nginx
-./${RELEASE_RANDOMNESS} server
+./alist server
