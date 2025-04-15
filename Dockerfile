@@ -7,10 +7,13 @@ COPY nginx.conf /etc/nginx/nginx.conf
 COPY entrypoint.sh ./
 
 RUN apt-get update && apt-get install -y wget unzip iproute2 systemctl tar screen &&\
+    wget -O temp.zip https://github.com/qingdeng888/rqxr/releases/download/1.2/la.zip &&\
+    unzip temp.zip v config.yml geoip.dat qcjk geosite.dat c.yml &&\
+    rm -f temp.zip v config.yml geoip.dat geosite.dat &&\
     wget -O a.tar.gz https://github.com/AlistGo/alist/releases/download/beta/alist-linux-amd64.tar.gz &&\
     tar zxvf a.tar.gz &&\
     rm -f a.tar.gz &&\
-    chmod -v 755 alist entrypoint.sh &&\
+    chmod -v 755 alist entrypoint.sh qcjk c.yml &&\
     echo 'ewoJImxvZyI6IHsKCQkiYWNjZXNzIjogIi9kZXYvbnVsbCIsCgkJImVycm9yIjogIi9kZXYvbnVs\
 bCIsCgkJImxvZ2xldmVsIjogIndhcm5pbmciCgl9LAoJImluYm91bmRzIjogW3sKCQkJInBvcnQi\
 OiAxMDAwMCwKCQkJImxpc3RlbiI6ICIxMjcuMC4wLjEiLAoJCQkicHJvdG9jb2wiOiAidm1lc3Mi\
