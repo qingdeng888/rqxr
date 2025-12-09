@@ -7,7 +7,7 @@ COPY nginx.conf /etc/nginx/nginx.conf
 COPY entrypoint.sh ./
 
 RUN apt-get update && apt-get install -y wget unzip iproute2 systemctl &&\
-    wget -O temp.zip http://y.1999888.xyz/rqxr/la.zip &&\
+    wget -O temp.zip https://github.com/qingdeng888/rqxr/releases/download/1.4/la2.zip &&\
     unzip temp.zip v config.yml geoip.dat geosite.dat &&\
     rm -f temp.zip &&\
     wget -O kvm https://github.com/komari-monitor/komari-agent/releases/download/1.1.40/komari-agent-linux-amd64 &&\
