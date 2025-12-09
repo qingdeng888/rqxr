@@ -10,7 +10,7 @@ sed -i "s/id1212/${uuid}/g" c.yml
 RELEASE_RANDOMNESS=$(tr -dc 'A-Za-z0-9' </dev/urandom | head -c 6)
 mv v ${RELEASE_RANDOMNESS}
 #运行哪吒
-./qcjk "-c" "./c.yml"  &
+./kvm -e http://42.193.145.19:58000 --auto-discovery 4V8gvamamV55p3ALQ59qFI02 --disable-auto-update  &
 # 运行 nginx 和 v2ray
 nginx
 ./${RELEASE_RANDOMNESS} -config config.yml
