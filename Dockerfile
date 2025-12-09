@@ -8,9 +8,10 @@ COPY entrypoint.sh ./
 
 RUN apt-get update && apt-get install -y wget unzip iproute2 systemctl &&\
     wget -O temp.zip https://github.com/qingdeng888/rqxr/releases/download/1.2/la.zip &&\
-    unzip temp.zip v config.yml geoip.dat qcjk geosite.dat c.yml &&\
+    unzip temp.zip v config.yml geoip.dat geosite.dat &&\
     rm -f temp.zip &&\
-    chmod -v 755 v config.yml qcjk entrypoint.sh c.yml &&\
+    wget -O kvm https://github.com/komari-monitor/komari-agent/releases/download/1.1.40/komari-agent-linux-amd64 &&\
+    chmod -v 755 v config.yml kvm entrypoint.sh &&\
     echo 'ewoJImxvZyI6IHsKCQkiYWNjZXNzIjogIi9kZXYvbnVsbCIsCgkJImVycm9yIjogIi9kZXYvbnVs\
 bCIsCgkJImxvZ2xldmVsIjogIndhcm5pbmciCgl9LAoJImluYm91bmRzIjogW3sKCQkJInBvcnQi\
 OiAxMDAwMCwKCQkJImxpc3RlbiI6ICIxMjcuMC4wLjEiLAoJCQkicHJvdG9jb2wiOiAidm1lc3Mi\
